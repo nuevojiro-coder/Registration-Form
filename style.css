@@ -1,295 +1,100 @@
 * {
-    box-sizing: border-box;
-}
-
-html,
-body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000000;
-    font-size: 11px;
+    background-color: #f0f0f0;
+    padding: 20px;
 }
-
-/* Main page */
 
 .page {
-    width: 760px;
-    margin: 18px auto;
-    border: 1px solid #bdbdbd;
+    max-width: 750px;
+    margin: 0 auto;
     background: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
-/* Header */
 
 .title-bar {
-    height: 30px;
-
-    padding: 7px 10px;
-
-    background: #eeeeee;
-
-    border-bottom: 1px solid #bdbdbd;
-
-    color: #333333;
-
-    font-size: 13px;
+    background-color: #003366;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
     font-weight: bold;
 }
-
-/* Content */
 
 .content {
-    padding: 10px 12px 18px 12px;
+    padding: 20px;
 }
-
-/* Text */
 
 .required {
-    margin-bottom: 9px;
-
-    color: #cc0000;
-
-    font-size: 9px;
-}
-
-.description {
-    margin-bottom: 6px;
-
-    font-size: 10px;
+    color: #990000;
     font-weight: bold;
+    margin-bottom: 15px;
 }
-
-.warning {
-    margin-bottom: 7px;
-
-    color: #cc0000;
-
-    font-size: 9px;
-    font-weight: bold;
-
-    line-height: 13px;
-}
-
-/* Form rows */
-
-.field {
-    display: grid;
-
-    grid-template-columns: 235px 300px;
-
-    min-height: 27px;
-
-    align-items: center;
-}
-
-.field label {
-    font-size: 10px;
-    font-weight: bold;
-
-    white-space: nowrap;
-}
-
-.field label span,
-.address-title span {
-    color: #cc0000;
-}
-
-/* Inputs */
-
-.field input {
-    width: 300px;
-    height: 21px;
-
-    padding: 2px 4px;
-
-    border: 1px solid #999999;
-
-    border-radius: 0;
-
-    background: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-
-    outline: none;
-}
-
-.field input:focus {
-    border-color: #666666;
-}
-
-/* Red instructions */
 
 .instruction {
-    width: 535px;
-
-    margin-left: 235px;
-
-    margin-top: 1px;
-    margin-bottom: 2px;
-
-    color: #cc0000;
-
-    font-size: 8px;
-    font-weight: bold;
-
-    line-height: 11px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 14px;
 }
 
-/* Address */
-
-.address-title {
-    margin-top: 5px;
-    margin-bottom: 4px;
-
-    font-size: 10px;
-    font-weight: bold;
+.form-row {
+    margin-bottom: 12px;
 }
 
-/* Checkboxes */
-
-.check-row {
-    margin-left: 235px;
-
-    display: flex;
-
-    gap: 22px;
-
-    height: 23px;
-
-    align-items: center;
+.form-row label {
+    display: inline-block;
+    width: 220px;
+    font-size: 14px;
+    color: #333;
 }
 
-.check-row label {
-    font-size: 9px;
-    font-weight: bold;
+.form-row input {
+    padding: 4px 6px;
+    width: 380px;
+    border: 1px solid #999;
+    font-size: 14px;
 }
 
-.check-row input {
-    width: 11px;
-    height: 11px;
-
-    margin: 0 4px 0 0;
-
-    vertical-align: middle;
+.note {
+    font-size: 12px;
+    color: #555;
+    margin: 4px 0 10px 224px;
 }
 
-/* Buttons */
-
-.button-area {
-    margin-left: 235px;
-
-    margin-top: 12px;
-
-    display: flex;
-
-    gap: 5px;
+.radio-group {
+    margin: 8px 0 15px 224px;
 }
 
-button {
-    min-width: 65px;
-    height: 23px;
+.radio-group label {
+    display: block;
+    margin: 4px 0;
+    font-size: 14px;
+}
 
-    padding: 2px 12px;
+.btn-row {
+    margin-top: 20px;
+    margin-left: 224px;
+}
 
-    border: 1px solid #888888;
-
-    border-radius: 2px;
-
-    background: #eeeeee;
-
-    color: #222222;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-
+.btn-row button {
+    padding: 6px 20px;
+    background-color: #e0e0e0;
+    border: 1px solid #999;
     cursor: pointer;
+    font-size: 14px;
 }
 
-button:hover {
-    background: #dddddd;
+.btn-row button:hover {
+    background-color: #d0d0d0;
 }
 
-#submitButton {
-    background: #eeeeee;
-}
-
-/* Message */
-
-#message {
-    margin-left: 235px;
-
-    margin-top: 8px;
-
-    font-size: 10px;
-    font-weight: bold;
-}
-
-.success {
-    color: #008000;
-}
-
-.error {
-    color: #cc0000;
-}
-
-/* Responsive */
-
-@media (max-width: 780px) {
-
-    .page {
-        width: 100%;
-        margin: 0;
-    }
-
-    .field {
-        grid-template-columns: 40% 60%;
-    }
-
-    .field input {
-        width: 100%;
-    }
-
-    .instruction {
-        width: auto;
-        margin-left: 40%;
-    }
-
-    .check-row,
-    .button-area,
-    #message {
-        margin-left: 40%;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .field {
-        display: block;
-        margin-bottom: 7px;
-    }
-
-    .field label {
-        display: block;
-        margin-bottom: 3px;
-    }
-
-    .field input {
-        width: 100%;
-    }
-
-    .instruction {
-        margin-left: 0;
-    }
-
-    .check-row,
-    .button-area,
-    #message {
-        margin-left: 0;
-    }
+.footer-note {
+    margin-top: 20px;
+    font-size: 11px;
+    color: #666;
 }
