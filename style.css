@@ -1,269 +1,295 @@
 * {
     box-sizing: border-box;
+}
+
+html,
+body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f3f6f9;
-    color: #333;
-    padding: 30px 15px;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    font-size: 11px;
 }
 
-/* Main container */
+/* Main page */
 
-.container {
-    max-width: 850px;
-    margin: auto;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+.page {
+    width: 760px;
+    margin: 18px auto;
+    border: 1px solid #bdbdbd;
+    background: #ffffff;
 }
 
 /* Header */
 
-.header {
-    background: #0876b9;
-    color: white;
-    padding: 25px 30px;
-}
+.title-bar {
+    height: 30px;
 
-.header h1 {
-    font-size: 25px;
-    margin-bottom: 7px;
-}
+    padding: 7px 10px;
 
-.header p {
-    font-size: 14px;
-}
+    background: #eeeeee;
 
-/* Form */
+    border-bottom: 1px solid #bdbdbd;
 
-form {
-    padding: 30px;
-}
+    color: #333333;
 
-.required-note {
-    color: #777;
     font-size: 13px;
-    margin-bottom: 25px;
+    font-weight: bold;
 }
 
-.required-note span,
-label span {
-    color: #d93025;
+/* Content */
+
+.content {
+    padding: 10px 12px 18px 12px;
 }
 
-/* Section titles */
+/* Text */
 
-h2 {
-    color: #0876b9;
-    font-size: 19px;
+.required {
+    margin-bottom: 9px;
 
-    border-bottom: 2px solid #e5e5e5;
+    color: #cc0000;
 
-    padding-bottom: 8px;
-    margin: 25px 0 18px;
+    font-size: 9px;
 }
 
-/* Form fields */
+.description {
+    margin-bottom: 6px;
 
-.form-group {
-    margin-bottom: 17px;
+    font-size: 10px;
+    font-weight: bold;
 }
 
-label {
-    display: block;
+.warning {
+    margin-bottom: 7px;
 
-    font-size: 14px;
+    color: #cc0000;
+
+    font-size: 9px;
     font-weight: bold;
 
-    margin-bottom: 7px;
+    line-height: 13px;
 }
 
-input,
-select {
-    width: 100%;
+/* Form rows */
 
-    padding: 11px 12px;
-
-    border: 1px solid #c9c9c9;
-    border-radius: 6px;
-
-    font-size: 14px;
-
-    outline: none;
-
-    transition: 0.2s;
-}
-
-input:focus,
-select:focus {
-    border-color: #0876b9;
-
-    box-shadow:
-        0 0 0 3px rgba(8, 118, 185, 0.12);
-}
-
-/* Columns */
-
-.row {
+.field {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 235px 300px;
 
-    gap: 18px;
-}
-
-.three-columns {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr 1fr;
-
-    gap: 18px;
-}
-
-/* Checkbox */
-
-.checkbox-group {
-    display: flex;
+    min-height: 27px;
 
     align-items: center;
-
-    gap: 8px;
-
-    margin: 15px 0;
 }
 
-.checkbox-group input {
-    width: auto;
+.field label {
+    font-size: 10px;
+    font-weight: bold;
+
+    white-space: nowrap;
 }
 
-.checkbox-group label {
-    margin: 0;
-    font-weight: normal;
+.field label span,
+.address-title span {
+    color: #cc0000;
+}
+
+/* Inputs */
+
+.field input {
+    width: 300px;
+    height: 21px;
+
+    padding: 2px 4px;
+
+    border: 1px solid #999999;
+
+    border-radius: 0;
+
+    background: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+
+    outline: none;
+}
+
+.field input:focus {
+    border-color: #666666;
+}
+
+/* Red instructions */
+
+.instruction {
+    width: 535px;
+
+    margin-left: 235px;
+
+    margin-top: 1px;
+    margin-bottom: 2px;
+
+    color: #cc0000;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    line-height: 11px;
+}
+
+/* Address */
+
+.address-title {
+    margin-top: 5px;
+    margin-bottom: 4px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Checkboxes */
+
+.check-row {
+    margin-left: 235px;
+
+    display: flex;
+
+    gap: 22px;
+
+    height: 23px;
+
+    align-items: center;
+}
+
+.check-row label {
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.check-row input {
+    width: 11px;
+    height: 11px;
+
+    margin: 0 4px 0 0;
+
+    vertical-align: middle;
 }
 
 /* Buttons */
 
-.buttons {
+.button-area {
+    margin-left: 235px;
+
+    margin-top: 12px;
+
     display: flex;
 
-    justify-content: flex-end;
-
-    gap: 12px;
-
-    margin-top: 30px;
-
-    padding-top: 20px;
-
-    border-top: 1px solid #eee;
+    gap: 5px;
 }
 
 button {
-    padding: 12px 25px;
+    min-width: 65px;
+    height: 23px;
 
-    border: none;
+    padding: 2px 12px;
 
-    border-radius: 6px;
+    border: 1px solid #888888;
 
-    font-size: 14px;
+    border-radius: 2px;
 
-    font-weight: bold;
+    background: #eeeeee;
+
+    color: #222222;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
 
     cursor: pointer;
-
-    transition: 0.2s;
 }
 
-.clear-btn {
-    background: #e9ecef;
-    color: #333;
+button:hover {
+    background: #dddddd;
 }
 
-.clear-btn:hover {
-    background: #d6d9dc;
+#submitButton {
+    background: #eeeeee;
 }
 
-.submit-btn {
-    background: #0876b9;
-    color: white;
+/* Message */
+
+#message {
+    margin-left: 235px;
+
+    margin-top: 8px;
+
+    font-size: 10px;
+    font-weight: bold;
 }
 
-.submit-btn:hover {
-    background: #075d91;
+.success {
+    color: #008000;
 }
-
-/* Error messages */
 
 .error {
-    display: none;
-
-    color: #d93025;
-
-    font-size: 12px;
-
-    margin-top: 5px;
+    color: #cc0000;
 }
 
-input.invalid {
-    border-color: #d93025;
+/* Responsive */
 
-    background: #fff7f7;
-}
+@media (max-width: 780px) {
 
-/* Success message */
-
-.success-message {
-    display: none;
-
-    background: #dff6e7;
-
-    color: #18733a;
-
-    border: 1px solid #a9dfbd;
-
-    padding: 14px;
-
-    border-radius: 6px;
-
-    margin-bottom: 20px;
-}
-
-/* Mobile */
-
-@media (max-width: 650px) {
-
-    body {
-        padding: 10px;
-    }
-
-    form {
-        padding: 20px;
-    }
-
-    .row,
-    .three-columns {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .header {
-        padding: 20px;
-    }
-
-    .header h1 {
-        font-size: 20px;
-    }
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    button {
+    .page {
         width: 100%;
+        margin: 0;
+    }
+
+    .field {
+        grid-template-columns: 40% 60%;
+    }
+
+    .field input {
+        width: 100%;
+    }
+
+    .instruction {
+        width: auto;
+        margin-left: 40%;
+    }
+
+    .check-row,
+    .button-area,
+    #message {
+        margin-left: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .field {
+        display: block;
+        margin-bottom: 7px;
+    }
+
+    .field label {
+        display: block;
+        margin-bottom: 3px;
+    }
+
+    .field input {
+        width: 100%;
+    }
+
+    .instruction {
+        margin-left: 0;
+    }
+
+    .check-row,
+    .button-area,
+    #message {
+        margin-left: 0;
     }
 }
