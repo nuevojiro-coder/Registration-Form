@@ -18,133 +18,113 @@
             </div>
 
             <p class="instruction">
-                Please supply the following Information as reported to the Social Security System
+                Please supply the following information as reported to the Social Security System.<br>
+                <span class="red-note">If your email address is other than yahoo.com, kindly inform your network administrator not to block mail from sss.gov.ph.</span>
             </p>
 
             <form action="#" method="post">
-                <!-- CRN / SS Number -->
+                <!-- ✅ FIRST FIELD: CRN / SS Number -->
                 <div class="form-row">
-                    <label for="ssnumber">* CRN / SS Number</label>
-                    <input type="text" id="ssnumber" name="ssnumber" required>
+                    <label>* CRN / SS Number</label>
+                    <input type="text" id="crn_ss" name="crn_ss" required>
                 </div>
 
                 <!-- Email Address -->
                 <div class="form-row">
-                    <label for="email">* Email Address</label>
+                    <label>* Email Address</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                <p class="note">
-                    Kindly inform your network administrator not to block mail from sss.gov.ph
-                </p>
 
                 <!-- Confirm Email -->
                 <div class="form-row">
-                    <label for="confirm_email">* Confirm Email Address</label>
+                    <label>* Confirm Email Address</label>
                     <input type="email" id="confirm_email" name="confirm_email" required>
                 </div>
 
                 <!-- Preferred User ID -->
                 <div class="form-row">
-                    <label for="userid">* Preferred User ID</label>
+                    <label>* Preferred User ID</label>
                     <input type="text" id="userid" name="userid" required>
                 </div>
-                <p class="note">
+                <p class="red-note note">
                     Length must be 8-20 characters. First character must be alphabetic. No special characters except underscore. (Ex. Juan_Cruz1234)
                 </p>
 
                 <!-- Confirm User ID -->
                 <div class="form-row">
-                    <label for="confirm_userid">* Confirm Preferred User ID</label>
+                    <label>* Confirm Preferred User ID</label>
                     <input type="text" id="confirm_userid" name="confirm_userid" required>
                 </div>
 
-                <!-- Surname / Last Name -->
+                <!-- Forbidden Characters Note -->
+                <p class="red-note note">
+                    The following characters are not allowed: # % ( ) - ' " | &lt; &gt; ; [ \ ]
+                </p>
+
+                <!-- Surname -->
                 <div class="form-row">
-                    <label for="lastname">* Surname / Last Name</label>
+                    <label>* Surname / Last Name</label>
                     <input type="text" id="lastname" name="lastname" required>
                 </div>
 
                 <!-- Given Name -->
                 <div class="form-row">
-                    <label for="firstname">* Given Name</label>
+                    <label>* Given Name</label>
                     <input type="text" id="firstname" name="firstname" required>
                 </div>
 
                 <!-- Middle Name -->
                 <div class="form-row">
-                    <label for="middlename">Middle Name</label>
+                    <label>Middle Name</label>
                     <input type="text" id="middlename" name="middlename">
                 </div>
 
-                <!-- Allowed Characters Note -->
-                <p class="note">
-                    The following characters are not allowed: # % ( ) — ' " | &lt; &gt; ; [ \ ]
-                </p>
-
                 <!-- Birth Date -->
                 <div class="form-row">
-                    <label for="birthdate">* Date of Birth (MM/DD/YYYY)</label>
-                    <input type="text" id="birthdate" name="birthdate" placeholder="MM/DD/YYYY" required>
-                </div>
-
-                <!-- Registration Preference -->
-                <div class="form-row">
-                    <label>* Registration Preference</label>
-                </div>
-                <div class="radio-group">
-                    <label><input type="radio" name="pref" value="savings"> Savings Account Number</label><br>
-                    <label><input type="radio" name="pref" value="umid"> UMID CARD</label><br>
-                    <label><input type="radio" name="pref" value="employer"> Employer/Household ID Number</label><br>
-                    <label><input type="radio" name="pref" value="payment"> Paid Payment Reference Number / SBR No. / Payment Receipt</label><br>
-                    <label><input type="radio" name="pref" value="loan"> Date of Loan with Existing Loan Balance</label><br>
-                    <label><input type="radio" name="pref" value="transaction"> Transaction Number</label>
+                    <label>* Date of Birth</label>
+                    <input type="date" id="birthdate" name="birthdate" placeholder="mm/dd/yyyy" required>
                 </div>
 
                 <!-- Mailing Address -->
                 <div class="form-row">
-                    <label>Mailing Address Information</label>
+                    <label>* Mailing Address (Philippine Address)</label>
                 </div>
+
                 <div class="form-row">
-                    <label for="room">Room / Unit No. & Building Name</label>
-                    <input type="text" id="room" name="room">
+                    <label>Room / Floor / Unit No. & Building Name</label>
+                    <input type="text" id="building" name="building">
                 </div>
+
                 <div class="form-row">
-                    <label for="house">House / Lot & Block No.</label>
+                    <label>House / Lot & Block No.</label>
                     <input type="text" id="house" name="house">
                 </div>
+
                 <div class="form-row">
-                    <label for="street">Street</label>
+                    <label>Street</label>
                     <input type="text" id="street" name="street">
                 </div>
+
                 <div class="form-row">
-                    <label for="subdivision">Subdivision</label>
+                    <label>Subdivision</label>
                     <input type="text" id="subdivision" name="subdivision">
                 </div>
-                <div class="form-row">
-                    <label for="city">City / Municipality</label>
-                    <input type="text" id="city" name="city">
-                </div>
-                <div class="form-row">
-                    <label for="province">Province</label>
-                    <input type="text" id="province" name="province">
-                </div>
-                <div class="form-row">
-                    <label for="barangay">Barangay</label>
-                    <input type="text" id="barangay" name="barangay">
-                </div>
-                <div class="form-row">
-                    <label for="zip">Postal Code</label>
-                    <input type="text" id="zip" name="zip">
+
+                <!-- Metro Manila / Province Checkboxes -->
+                <div class="form-row checkbox-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="location" value="metro"> Metro Manila
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="location" value="province"> Province
+                    </label>
                 </div>
 
-                <!-- Submit -->
+                <!-- Buttons -->
                 <div class="btn-row">
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="btn-submit">Submit</button>
+                    <button type="reset" class="btn-clear">Clear</button>
                 </div>
-
-                <p class="footer-note">
-                    Disclaimer: This is a demo form. Not affiliated with SSS.
-                </p>
             </form>
         </div>
     </div>
