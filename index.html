@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Member User ID Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>Online Member User ID Registration</h1>
+            <p>Create your online member account</p>
+        </header>
+
+        <form id="registrationForm">
+
+            <p class="required-note">
+                Fields marked with <span>*</span> are required.
+            </p>
+
+            <div id="successMessage" class="success-message">
+                Registration submitted successfully!
+            </div>
+
+            <!-- ACCOUNT INFORMATION -->
+            <h2>Account Information</h2>
+
+            <div class="form-group">
+                <label for="gsis">
+                    GSIS No. <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="gsis"
+                    placeholder="Enter your GSIS number"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    Email Address <span>*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@email.com"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="confirmEmail">
+                    Confirm Email Address <span>*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="confirmEmail"
+                    placeholder="Re-enter your email"
+                    required
+                >
+
+                <p id="emailError" class="error">
+                    Email addresses do not match.
+                </p>
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label for="username">
+                        Preferred User ID <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Choose a User ID"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmUsername">
+                        Confirm User ID <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="confirmUsername"
+                        placeholder="Re-enter User ID"
+                        required
+                    >
+
+                    <p id="usernameError" class="error">
+                        User IDs do not match.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- PERSONAL INFORMATION -->
+            <h2>Personal Information</h2>
+
+            <div class="three-columns">
+
+                <div class="form-group">
+                    <label for="surname">
+                        Surname <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="surname"
+                        placeholder="Surname"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="firstname">
+                        Given Name <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="firstname"
+                        placeholder="Given Name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="middlename">
+                        Middle Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="middlename"
+                        placeholder="Middle Name"
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">
+                    Date of Birth <span>*</span>
+                </label>
+
+                <input
+                    type="date"
+                    id="birthdate"
+                    required
+                >
+            </div>
+
+            <!-- ADDRESS -->
+            <h2>Mailing Address</h2>
+
+            <div class="form-group">
+                <label for="building">
+                    Room / Floor / Unit No. & Building Name
+                </label>
+
+                <input
+                    type="text"
+                    id="building"
+                    placeholder="e.g. Unit 201, ABC Building"
+                >
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label for="house">
+                        House / Lot & Block No.
+                    </label>
+
+                    <input
+                        type="text"
+                        id="house"
+                        placeholder="House / Lot / Block No."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="street">
+                        Street
+                    </label>
+
+                    <input
+                        type="text"
+                        id="street"
+                        placeholder="Street Name"
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="subdivision">
+                    Subdivision
+                </label>
+
+                <input
+                    type="text"
+                    id="subdivision"
+                    placeholder="Subdivision / Village"
+                >
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="metro">
+
+                <label for="metro">
+                    Metro Manila
+                </label>
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label for="province">
+                        Province
+                    </label>
+
+                    <select id="province">
+
+                        <option value="">
+                            Select Province
+                        </option>
+
+                        <option>South Cotabato</option>
+                        <option>Sultan Kudarat</option>
+                        <option>Sarangani</option>
+                        <option>Davao del Sur</option>
+                        <option>Cebu</option>
+                        <option>Laguna</option>
+                        <option>Batangas</option>
+                        <option>Other</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">
+                        City / Municipality
+                    </label>
+
+                    <input
+                        type="text"
+                        id="city"
+                        placeholder="City / Municipality"
+                    >
+                </div>
+
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="buttons">
+
+                <button
+                    type="reset"
+                    class="clear-btn"
+                >
+                    Clear
+                </button>
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Register
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
