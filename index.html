@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Online Member User ID Registration</title>
 
     <link rel="stylesheet" href="style.css">
@@ -10,282 +11,176 @@
 
 <body>
 
-    <div class="container">
+    <div class="page">
 
-        <header class="header">
-            <h1>Online Member User ID Registration</h1>
-            <p>Create your online member account</p>
-        </header>
+        <div class="title-bar">
+            Online Member User ID Registration
+        </div>
 
-        <form id="registrationForm">
+        <div class="content">
 
-            <p class="required-note">
-                Fields marked with <span>*</span> are required.
-            </p>
-
-            <div id="successMessage" class="success-message">
-                Registration submitted successfully!
+            <div class="required">
+                * Required Field
             </div>
 
-            <!-- ACCOUNT INFORMATION -->
-            <h2>Account Information</h2>
+            <div class="description">
+                Please supply the following information as reported to the Social Security System.
+            </div>
 
-            <div class="form-group">
-                <label for="gsis">
-                    GSIS No. <span>*</span>
+            <div class="warning">
+                If your email address is other than yahoo.com, kindly inform your network
+                administrator not to block mail from sss.gov.ph.
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="field">
+                <label>
+                    <span>*</span> Email Address
                 </label>
 
-                <input
-                    type="text"
-                    id="gsis"
-                    placeholder="Enter your GSIS number"
-                    required
-                >
+                <input type="email" id="email">
             </div>
 
-            <div class="form-group">
-                <label for="email">
-                    Email Address <span>*</span>
+            <div class="field">
+                <label>
+                    <span>*</span> Confirm Email Address
                 </label>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="example@email.com"
-                    required
-                >
+                <input type="email" id="confirmEmail">
             </div>
 
-            <div class="form-group">
-                <label for="confirmEmail">
-                    Confirm Email Address <span>*</span>
+            <!-- USER ID -->
+
+            <div class="instruction">
+                Length must be 8-20 characters. First character must be alphabetic.
+                No special characters except underscore. (Ex. Juan_Cruz1234)
+            </div>
+
+            <div class="field">
+                <label>
+                    <span>*</span> Preferred User ID
                 </label>
 
-                <input
-                    type="email"
-                    id="confirmEmail"
-                    placeholder="Re-enter your email"
-                    required
-                >
-
-                <p id="emailError" class="error">
-                    Email addresses do not match.
-                </p>
+                <input type="text" id="userId" maxlength="20">
             </div>
 
-            <div class="row">
+            <div class="field">
+                <label>
+                    <span>*</span> Confirm Preferred User ID
+                </label>
 
-                <div class="form-group">
-                    <label for="username">
-                        Preferred User ID <span>*</span>
-                    </label>
-
-                    <input
-                        type="text"
-                        id="username"
-                        placeholder="Choose a User ID"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmUsername">
-                        Confirm User ID <span>*</span>
-                    </label>
-
-                    <input
-                        type="text"
-                        id="confirmUsername"
-                        placeholder="Re-enter User ID"
-                        required
-                    >
-
-                    <p id="usernameError" class="error">
-                        User IDs do not match.
-                    </p>
-                </div>
-
+                <input type="text" id="confirmUserId" maxlength="20">
             </div>
 
             <!-- PERSONAL INFORMATION -->
-            <h2>Personal Information</h2>
 
-            <div class="three-columns">
-
-                <div class="form-group">
-                    <label for="surname">
-                        Surname <span>*</span>
-                    </label>
-
-                    <input
-                        type="text"
-                        id="surname"
-                        placeholder="Surname"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="firstname">
-                        Given Name <span>*</span>
-                    </label>
-
-                    <input
-                        type="text"
-                        id="firstname"
-                        placeholder="Given Name"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="middlename">
-                        Middle Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="middlename"
-                        placeholder="Middle Name"
-                    >
-                </div>
-
+            <div class="instruction">
+                The following characters are not allowed:
+                # % ( ) \ - ' " &lt; &gt; *
             </div>
 
-            <div class="form-group">
-                <label for="birthdate">
-                    Date of Birth <span>*</span>
+            <div class="field">
+                <label>
+                    <span>*</span> Surname/Last Name
                 </label>
 
-                <input
-                    type="date"
-                    id="birthdate"
-                    required
-                >
+                <input type="text" id="surname">
+            </div>
+
+            <div class="field">
+                <label>
+                    <span>*</span> Given Name
+                </label>
+
+                <input type="text" id="givenName">
+            </div>
+
+            <div class="field">
+                <label>
+                    Middle Name
+                </label>
+
+                <input type="text" id="middleName">
+            </div>
+
+            <div class="field">
+                <label>
+                    <span>*</span> Date of Birth
+                </label>
+
+                <input type="date" id="birthDate">
             </div>
 
             <!-- ADDRESS -->
-            <h2>Mailing Address</h2>
 
-            <div class="form-group">
-                <label for="building">
+            <div class="address-title">
+                <span>*</span> Mailing Address (Philippine Address)
+            </div>
+
+            <div class="field">
+                <label>
                     Room / Floor / Unit No. & Building Name
                 </label>
 
-                <input
-                    type="text"
-                    id="building"
-                    placeholder="e.g. Unit 201, ABC Building"
-                >
+                <input type="text" id="building">
             </div>
 
-            <div class="row">
+            <div class="field">
+                <label>
+                    House / Lot & Block No.
+                </label>
 
-                <div class="form-group">
-                    <label for="house">
-                        House / Lot & Block No.
-                    </label>
-
-                    <input
-                        type="text"
-                        id="house"
-                        placeholder="House / Lot / Block No."
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="street">
-                        Street
-                    </label>
-
-                    <input
-                        type="text"
-                        id="street"
-                        placeholder="Street Name"
-                    >
-                </div>
-
+                <input type="text" id="house">
             </div>
 
-            <div class="form-group">
-                <label for="subdivision">
+            <div class="field">
+                <label>
+                    Street
+                </label>
+
+                <input type="text" id="street">
+            </div>
+
+            <div class="field">
+                <label>
                     Subdivision
                 </label>
 
-                <input
-                    type="text"
-                    id="subdivision"
-                    placeholder="Subdivision / Village"
-                >
+                <input type="text" id="subdivision">
             </div>
 
-            <div class="checkbox-group">
-                <input type="checkbox" id="metro">
+            <div class="check-row">
 
-                <label for="metro">
+                <label>
+                    <input type="checkbox" id="metro">
                     Metro Manila
                 </label>
-            </div>
 
-            <div class="row">
-
-                <div class="form-group">
-                    <label for="province">
-                        Province
-                    </label>
-
-                    <select id="province">
-
-                        <option value="">
-                            Select Province
-                        </option>
-
-                        <option>South Cotabato</option>
-                        <option>Sultan Kudarat</option>
-                        <option>Sarangani</option>
-                        <option>Davao del Sur</option>
-                        <option>Cebu</option>
-                        <option>Laguna</option>
-                        <option>Batangas</option>
-                        <option>Other</option>
-
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="city">
-                        City / Municipality
-                    </label>
-
-                    <input
-                        type="text"
-                        id="city"
-                        placeholder="City / Municipality"
-                    >
-                </div>
+                <label>
+                    <input type="checkbox" id="province">
+                    Province
+                </label>
 
             </div>
 
             <!-- BUTTONS -->
-            <div class="buttons">
 
-                <button
-                    type="reset"
-                    class="clear-btn"
-                >
-                    Clear
+            <div class="button-area">
+
+                <button type="button" id="submitButton">
+                    Submit
                 </button>
 
-                <button
-                    type="submit"
-                    class="submit-btn"
-                >
-                    Register
+                <button type="button" id="clearButton">
+                    Clear
                 </button>
 
             </div>
 
-        </form>
+            <div id="message"></div>
+
+        </div>
 
     </div>
 
