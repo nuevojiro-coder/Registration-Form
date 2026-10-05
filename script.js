@@ -1,104 +1,103 @@
-const form = document.getElementById("registrationForm");
+const submitButton = document.getElementById("submitButton");
+const clearButton = document.getElementById("clearButton");
+const message = document.getElementById("message");
 
-form.addEventListener("submit", function(event) {
+submitButton.addEventListener("click", function () {
 
-    // Prevent page from refreshing
-    event.preventDefault();
-
-    // Get form values
-    const email = document.getElementById("email");
+    const email = document.getElementById("email").value.trim();
     const confirmEmail =
-        document.getElementById("confirmEmail");
+        document.getElementById("confirmEmail").value.trim();
 
-    const username =
-        document.getElementById("username");
+    const userId =
+        document.getElementById("userId").value.trim();
 
-    const confirmUsername =
-        document.getElementById("confirmUsername");
+    const confirmUserId =
+        document.getElementById("confirmUserId").value.trim();
 
-    // Error messages
-    const emailError =
-        document.getElementById("emailError");
+    message.className = "";
+    message.textContent = "";
 
-    const usernameError =
-        document.getElementById("usernameError");
+    /* Check required fields */
 
-    const successMessage =
-        document.getElementById("successMessage");
-
-    let valid = true;
-
-
-    // Reset previous errors
-
-    emailError.style.display = "none";
-    usernameError.style.display = "none";
-
-    email.classList.remove("invalid");
-    confirmEmail.classList.remove("invalid");
-
-    username.classList.remove("invalid");
-    confirmUsername.classList.remove("invalid");
-
-
-    // Check email
-
-    if (email.value !== confirmEmail.value) {
-
-        emailError.style.display = "block";
-
-        email.classList.add("invalid");
-        confirmEmail.classList.add("invalid");
-
-        valid = false;
+    if (
+        email === "" ||
+        confirmEmail === "" ||
+        userId === "" ||
+        confirmUserId === "" ||
+        document.getElementById("surname").value.trim() === "" ||
+        document.getElementById("givenName").value.trim() === "" ||
+        document.getElementById("birthDate").value === ""
+    ) {
+        message.textContent = "Please complete all required fields.";
+        message.className = "error";
+        return;
     }
 
+    /* Check email */
 
-    // Check username
+    if (email !== confirmEmail) {
+        message.textContent =
+            "Email addresses do not match.";
 
-    if (username.value !== confirmUsername.value) {
-
-        usernameError.style.display = "block";
-
-        username.classList.add("invalid");
-        confirmUsername.classList.add("invalid");
-
-        valid = false;
+        message.className = "error";
+        return;
     }
 
+    /* Check User ID length */
 
-    // If everything is correct
+    if (userId.length < 8 || userId.length > 20) {
+        message.textContent =
+            "User ID must be 8-20 characters.";
 
-    if (valid) {
-
-        successMessage.style.display = "block";
-
-        successMessage.textContent =
-            "Registration submitted successfully!";
-
-        successMessage.scrollIntoView({
-            behavior: "smooth"
-        });
-
-        console.log(
-            "Registration submitted successfully!"
-        );
+        message.className = "error";
+        return;
     }
 
+    /* Check User ID format */
+
+    if (!/^[A-Za-z][A-Za-z0-9_]*$/.test(userId)) {
+        message.textContent =
+            "User ID must start with a letter and may only contain letters, numbers, and underscores.";
+
+        message.className = "error";
+        return;
+    }
+
+    /* Check User IDs */
+
+    if (userId !== confirmUserId) {
+        message.textContent =
+            "Preferred User IDs do not match.";
+
+        message.className = "error";
+        return;
+    }
+
+    /* Successful submission */
+
+    message.textContent =
+        "Registration submitted successfully.";
+
+    message.className = "success";
 });
 
 
-// Clear success message when reset button is clicked
+/* Clear button */
 
-form.addEventListener("reset", function() {
+clearButton.addEventListener("click", function () {
 
-    document.getElementById("successMessage")
-        .style.display = "none";
+    const inputs = document.querySelectorAll("input");
 
-    document.getElementById("emailError")
-        .style.display = "none";
+    inputs.forEach(function (input) {
 
-    document.getElementById("usernameError")
-        .style.display = "none";
+        if (input.type === "checkbox") {
+            input.checked = false;
+        } else {
+            input.value = "";
+        }
 
+    });
+
+    message.textContent = "";
+    message.className = "";
 });
